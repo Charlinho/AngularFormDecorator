@@ -1,0 +1,16 @@
+<header>
+  <h1>Angular Decorator Form!</h1>
+</header>
+<section>
+  <form [formGroup]="formGroup">
+      <input type="text" placeholder="Digite o nome"
+             formControlName="name" [(ngModel)] ="user.name">
+    
+      <input type="text" placeholder="Digite o e-mail"
+            formControlName="email" [(ngModel)]="user.email"/>
+    
+      <button type="button" (click)="onSendClick()"
+        [disabled]="formGroup.invalid">Enviar
+      </button>
+  </form>
+</section>
