@@ -1,4 +1,4 @@
-# angular-m34ces
+# Angular Form Decorator
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.1.
 
