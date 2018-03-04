@@ -3,7 +3,7 @@
 </header>
 <section>
   <form [formGroup]="formGroup">
-      <input type="text" placeholder="Digite o nome"
+      <input type="text" placeholder="Digite o nome" appValidateOn="blur"
              formControlName="name" [(ngModel)] ="user.name">
     
       <input type="text" placeholder="Digite o e-mail"

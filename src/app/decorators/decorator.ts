@@ -1,11 +1,12 @@
 import { FormControl } from '@angular/forms';
+import { HostListener } from '@angular/core';
 
-let controlValidators = [];
+const controlValidators = [];
 
 export function FormDecorator() {
     return (...args) => {
       decorateClass(args[0]);
-  }
+  };
 }
 
 export function FormName(validators?) {
@@ -13,12 +14,18 @@ export function FormName(validators?) {
       if (validators) {
         validators.forEach((validator) => {
           controlValidators.push({key: key, validators: validators});
-        })    
+        });
       } else {
         controlValidators.push({key: key, validators: []});
       }
-   }
+   };
 }
+
+// export function OnBlur() {
+//   @HostListener('blur') OnBlur() {
+//     console.log('here');
+//   }
+// }
 
 
 function decorateClass(constructor): void {
@@ -44,7 +51,7 @@ function addControls(instance): void {
 }
 
 function addValidators(instance, control): void {
-  if (control.validators) {  
+  if (control.validators) {
     instance.formGroup.get(control.key).setValidators(control.validators);
   }
 }

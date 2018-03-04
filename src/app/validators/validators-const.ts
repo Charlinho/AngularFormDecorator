@@ -10,4 +10,5 @@ export const Validator = {
     return Validators.minLength(length);
   },
   EMAIL: GlobalValidators.email
-}
+};
+
