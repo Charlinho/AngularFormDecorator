@@ -1,12 +1,12 @@
 import { FormName } from './decorators/decorator';
-import { Validator } from './validators/validators-const';
+import { REQUIRED, MIN_LENGTH, MAX_LENGTH } from './validators/validators';
 
 export class UserModel {
 
-  @FormName([Validator.REQUIRED, Validator.MINLENGTH(5)])
+  @FormName([REQUIRED, MIN_LENGTH(5)])
   name: string;
 
-  @FormName([Validator.REQUIRED, Validator.EMAIL])
+  @FormName([REQUIRED, MAX_LENGTH(5)])
   email: string;
 
   @FormName()

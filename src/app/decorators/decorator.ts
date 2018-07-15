@@ -1,6 +1,4 @@
 import { FormControl } from '@angular/forms';
-import { HostListener } from '@angular/core';
-
 const controlValidators = [];
 
 export function FormDecorator() {
@@ -21,13 +19,6 @@ export function FormName(validators?) {
    };
 }
 
-// export function OnBlur() {
-//   @HostListener('blur') OnBlur() {
-//     console.log('here');
-//   }
-// }
-
-
 function decorateClass(constructor): void {
   const HOOKS = [
     'ngOnInit'
@@ -35,7 +26,7 @@ function decorateClass(constructor): void {
 
   HOOKS.forEach((hook) => {
     const original = constructor.prototype[hook];
-    constructor.prototype[hook] = function (args) {
+    constructor.prototype[hook] = function () {
       addControls(this);
     };
   });

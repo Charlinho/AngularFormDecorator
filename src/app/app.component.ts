@@ -14,7 +14,7 @@ export class AppComponent {
   user: UserModel;
 
   constructor(private fb: FormBuilder) {
-    this.formGroup = fb.group({});
+    this.formGroup = this.fb.group({});
     this.user = new UserModel();
   }
 
